@@ -1,12 +1,10 @@
-from pyautogui import screenshot
+from PIL.ImageGrab import grab
 
 class screendata:
-    screenshot:str = "data"
     def __init__(self) -> None:
         pass
     
     def takescreenshot(self):
-        shots = screenshot()
-        shots.save(self.screenshot)
+        grab().save("data/shot.jpg")
         
 datas = screendata().takescreenshot()
