@@ -1,10 +1,11 @@
 from PIL.ImageGrab import grab
 
 class screendata:
-    def __init__(self) -> None:
-        pass
+    shotpath:str
+    def __init__(self,shotpath:str) -> None:
+        self.shotpath = shotpath
     
     def takescreenshot(self):
-        grab().save("data/shot.jpg")
-        
-datas = screendata().takescreenshot()
+        grab().save(self.shotpath)
+
+screendata("data/shot.png").takescreenshot()
